@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parag Nirwan | Full Stack Developer & AI Systems Engineer</title>
+    <meta name="description" content="Portfolio of Parag Nirwan - Full Stack Developer and AI Systems Engineer specializing in .NET, React, TypeScript, Python, and enterprise LLM integrations.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection {
+            background: rgba(249, 115, 22, 0.25);
+            color: #ffffff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b0f17;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e2638;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f17] text-slate-300 font-sans antialiased custom-scrollbar relative overflow-x-hidden min-h-screen">
+
+    <!-- Subtle Ambient Backdrop Glow (tasteful, not neon) -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[480px] pointer-events-none -z-10 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-brand-500/10 blur-[130px] rounded-full"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f17]/85 border-b border-slate-800/80 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <a href="#" class="group flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700/80 flex items-center justify-center text-xs font-mono font-bold text-brand-400 group-hover:border-brand-500/50 group-hover:text-brand-300 transition-colors">PN</span>
+                <span class="text-base font-bold tracking-tight text-white group-hover:text-slate-200 transition-colors">Parag Nirwan</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-medium">
+                <a href="#about" class="text-slate-400 hover:text-white transition-colors">About</a>
+                <a href="#experience" class="text-slate-400 hover:text-white transition-colors">Experience</a>
+                <a href="#education" class="text-slate-400 hover:text-white transition-colors">Education</a>
+                <a href="#projects" class="text-slate-400 hover:text-white transition-colors">Projects</a>
+                <a href="#skills" class="text-slate-400 hover:text-white transition-colors">Skills</a>
+                <a href="#contact" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all shadow-sm">
+                    Get in Touch
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-[#0d131f] px-6 pt-3 pb-6 space-y-3 font-medium text-sm">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-brand-400">About</a>
+            <a href="#experience" class="block py-2 text-slate-300 hover:text-brand-400">Experience</a>
+            <a href="#education" class="block py-2 text-slate-300 hover:text-brand-400">Education</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-brand-400">Projects</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-400">Skills</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-brand-400">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative z-10 pt-12 pb-16 md:pt-20 md:pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
+            
+            <div class="md:col-span-7 space-y-6">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/20 text-xs font-medium text-emerald-300">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Available for Software Engineering Roles
+                </div>
+                
+                <div class="space-y-2">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18]">
+                        Full Stack Developer &amp; <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-brand-500 to-amber-300">AI Systems Architect</span>
+                    </h1>
+                    <p class="text-sm font-mono text-slate-400 pt-1 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-brand-400"></i> Master's in Applied Computer Science
+                    </p>
+                </div>
+                
+                <p class="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-2xl">
+                    I build high-performance REST APIs, multi-tenant database systems, and enterprise LLM integrations. Specializing in <span class="text-white font-medium">TypeScript/Node.js</span>, <span class="text-white font-medium">React</span>, <span class="text-white font-medium">C#/.NET</span>, and <span class="text-white font-medium">PostgreSQL</span>.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <!-- Primary CTA -->
+                    <a href="mailto:pnirwan9@gmail.com" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 active:bg-brand-700 transition-colors shadow-sm shadow-brand-500/20 border border-brand-500">
+                        <i class="fa-regular fa-envelope"></i> Contact Me
+                    </a>
+                    
+                    <!-- Secondary: GitHub -->
+                    <a href="https://github.com/ParagNirwan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/80 hover:border-slate-600 transition-colors">
+                        <i class="fa-brands fa-github text-base"></i> GitHub
+                    </a>
+
+                    <!-- Secondary: LinkedIn -->
+                    <a href="https://www.linkedin.com/in/parag-nirwan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/80 hover:border-slate-600 transition-colors">
+                        <i class="fa-brands fa-linkedin text-base text-[#0a66c2]"></i> LinkedIn
+                    </a>
+
+                    <!-- Interactive Copy Email Button -->
+                    <button id="copy-email-btn" onclick="copyEmailAddress()" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 transition-colors cursor-pointer group" title="Copy email address to clipboard">
+                        <i id="copy-icon" class="fa-regular fa-copy text-slate-400 group-hover:text-brand-400 transition-colors"></i>
+                        <span id="copy-text">Copy Email</span>
+                    </button>
+                </div>
+
+                <!-- Location / Meta -->
+                <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-6 text-xs sm:text-sm font-mono text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-brand-500"></i> Landau, Rhineland-Pfalz, Germany
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-earth-europe text-slate-500"></i> Open to Hybrid / Remote in Germany
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Image Container -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-xs sm:max-w-sm">
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-800/90 bg-slate-900/60 shadow-xl p-3">
+                        <div class="aspect-[4/5] w-full rounded-xl overflow-hidden bg-slate-950 relative border border-slate-800">
+                            <img src="bewerbungs_foto.png" alt="Parag Nirwan" class="w-full h-full object-cover object-top transition duration-500">
+                        </div>
+                        
+                        <div class="pt-3 pb-1 px-1 flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span class="text-slate-300 font-semibold">Parag Nirwan</span>
+                            <span class="text-brand-400">Full Stack &amp; AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="relative z-10 py-16 border-t border-slate-800/70 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <div class="flex items-center gap-2.5 mb-2">
+                    <span class="h-px w-6 bg-brand-500"></span>
+                    <span class="text-xs font-mono font-semibold tracking-wider text-brand-400 uppercase">Career History</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Professional Experience</h2>
+            </div>
+            <p class="text-slate-400 text-sm mt-2 md:mt-0 font-mono">Full Stack &amp; Systems Engineering</p>
+        </div>
+
+        <!-- Career Timeline -->
+        <div class="relative border-l border-slate-800 ml-3 sm:ml-4 pl-6 sm:pl-8 space-y-12">
+            
+            <!-- Job 1 -->
+            <div class="relative group">
+                <!-- Timeline dot marker -->
+                <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-700 bg-slate-900 group-hover:border-brand-500 group-hover:bg-brand-500 transition-colors duration-200"></div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-6 sm:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">Fullstack Software Developer</h3>
+                            <p class="text-sm font-medium text-brand-400 mt-0.5">
+                                Gotomaxx Software GmbH <span class="text-slate-500 font-normal">• Hauenstein, Germany</span>
+                            </p>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/70 text-slate-300 text-xs font-mono w-max">
+                            05/2026 - 09/2026
+                        </span>
+                    </div>
+
+                    <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-outside ml-4 marker:text-slate-600">
+                        <li>Engineered an end-to-end document archive management system featuring a <strong class="text-white">.NET 10 / ASP.NET Core</strong> backend and <strong class="text-white">React 19 / TypeScript</strong> frontend.</li>
+                        <li>Implemented document previews, cross-tray faceted search, retention management, thumbnailing (libvips/pdf.js), and staged ZIP exports.</li>
+                        <li>Architected inbound email processing (IMAP poller, Postmark/Lettermint webhooks) and Microsoft Entra / Google Workspace OAuth 2.0 authentication flows with encrypted token storage.</li>
+                        <li>Authored 5 EF Core migrations across PostgreSQL and SQLite; optimized data layer using server-side keyset pagination to remove unbounded queries from hot paths.</li>
+                        <li>Standardized frontend UI architecture with design system components; contributed to a service exposing 566 REST endpoints across 5 PostgreSQL databases with 103 merged PRs.</li>
+                    </ul>
+
+                    <div class="mt-4 pt-3 border-t border-slate-800/60 flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">.NET 10</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">ASP.NET Core</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">React 19</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">PostgreSQL</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">SQLite</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">OAuth 2.0</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">EF Core</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="relative group">
+                <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-700 bg-slate-900 group-hover:border-brand-500 group-hover:bg-brand-500 transition-colors duration-200"></div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-6 sm:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">AI and Full Stack Developer (Master's Thesis)</h3>
+                            <p class="text-sm font-medium text-brand-400 mt-0.5">
+                                Previsec <span class="text-slate-500 font-normal">• Darmstadt, Germany</span>
+                            </p>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/70 text-slate-300 text-xs font-mono w-max">
+                            01/2025 - 07/2025
+                        </span>
+                    </div>
+
+                    <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-outside ml-4 marker:text-slate-600">
+                        <li>Architected an AI-driven decision support and summarization system for crisis management using locally hosted LLMs (Llama 3.2 via Ollama) to ensure on-premise data privacy.</li>
+                        <li>Developed a multi-tenant AI configuration service using TypeScript, Node.js, PostgreSQL, and Redis, integrated into a React &amp; Bootstrap frontend.</li>
+                        <li>Containerized the entire application stack with Docker and built GitLab CI/CD pipelines for continuous deployments and automated model updates.</li>
+                    </ul>
+
+                    <div class="mt-4 pt-3 border-t border-slate-800/60 flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Llama 3.2</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Ollama</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Node.js</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">PostgreSQL</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Redis</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Docker</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">GitLab CI/CD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="relative group">
+                <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-700 bg-slate-900 group-hover:border-brand-500 group-hover:bg-brand-500 transition-colors duration-200"></div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-6 sm:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">UI and Software Developer (Werkstudent)</h3>
+                            <p class="text-sm font-medium text-brand-400 mt-0.5">
+                                Medical Equipment Europe <span class="text-slate-500 font-normal">• Hammelburg, Germany</span>
+                            </p>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/70 text-slate-300 text-xs font-mono w-max">
+                            11/2024 - 09/2025
+                        </span>
+                    </div>
+
+                    <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-outside ml-4 marker:text-slate-600">
+                        <li>Migrated legacy WinForms applications to WPF in .NET 5.0 using the MVC pattern in C# and XAML for superior architecture and visual coherence.</li>
+                        <li>Redesigned interfaces for enhanced accessibility and standardized layout patterns; built in-app document processing including PDF preview and print capabilities.</li>
+                    </ul>
+
+                    <div class="mt-4 pt-3 border-t border-slate-800/60 flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">.NET 5.0</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">C#</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">WPF / XAML</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">MVC</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">PDF Tooling</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="relative group">
+                <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-700 bg-slate-900 group-hover:border-brand-500 group-hover:bg-brand-500 transition-colors duration-200"></div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-6 sm:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">Application Developer (Werkstudent)</h3>
+                            <p class="text-sm font-medium text-brand-400 mt-0.5">
+                                Lensing.AI (Formerly Everest Systems) <span class="text-slate-500 font-normal">• Heidelberg, Germany</span>
+                            </p>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/70 text-slate-300 text-xs font-mono w-max">
+                            07/2023 - 09/2024
+                        </span>
+                    </div>
+
+                    <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-outside ml-4 marker:text-slate-600">
+                        <li>Developed high-performance backend microservices for Everest ERP using TypeScript and Node.js.</li>
+                        <li>Designed and expanded REST APIs backed by PostgreSQL to optimize data retrieval and system scalability.</li>
+                    </ul>
+
+                    <div class="mt-4 pt-3 border-t border-slate-800/60 flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">TypeScript</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Node.js</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">PostgreSQL</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Microservices</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 5 -->
+            <div class="relative group">
+                <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-slate-700 bg-slate-900 group-hover:border-brand-500 group-hover:bg-brand-500 transition-colors duration-200"></div>
+
+                <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors rounded-xl p-6 sm:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold text-white">Operations Executive (IT Software Support)</h3>
+                            <p class="text-sm font-medium text-brand-400 mt-0.5">
+                                Infosys Ltd. <span class="text-slate-500 font-normal">• Pune, India</span>
+                            </p>
+                        </div>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/70 text-slate-300 text-xs font-mono w-max">
+                            10/2020 - 05/2022
+                        </span>
+                    </div>
+
+                    <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed list-disc list-outside ml-4 marker:text-slate-600">
+                        <li>Provided middleware infrastructure support using IBM WebSphere MQ, IBM MQ Explorer, and UNIX tools.</li>
+                        <li>Built high-performance web applications using Java Spring Boot and Angular frameworks.</li>
+                    </ul>
+
+                    <div class="mt-4 pt-3 border-t border-slate-800/60 flex flex-wrap gap-1.5 font-mono text-xs">
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Java</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Spring Boot</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Angular</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">IBM MQ</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">UNIX</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="relative z-10 py-16 border-t border-slate-800/70 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <div class="flex items-center gap-2.5 mb-2">
+                    <span class="h-px w-6 bg-brand-500"></span>
+                    <span class="text-xs font-mono font-semibold tracking-wider text-brand-400 uppercase">Education</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Academic Background</h2>
+            </div>
+            <p class="text-slate-400 text-sm mt-2 md:mt-0 font-mono">Computer Science &amp; Engineering</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Degree 1 -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 sm:p-7 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded border border-brand-500/20">Master's Degree</span>
+                        <span class="text-xs text-slate-400 font-mono">08/2025</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">M.Sc. in Applied Computer Science</h3>
+                    <p class="text-sm text-slate-400">Hochschule Schmalkalden <span class="text-slate-500">• Schmalkalden, Thüringen</span></p>
+                    <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                        Specialized in Software Architecture, Large Language Models, Natural Language Processing, and High-Performance Distributed Systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Degree 2 -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 sm:p-7 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="text-xs font-mono text-slate-300 bg-slate-800/80 px-2.5 py-1 rounded border border-slate-700/60">Bachelor's Degree</span>
+                        <span class="text-xs text-slate-400 font-mono">09/2020</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Bachelor of Computer Applications</h3>
+                    <p class="text-sm text-slate-400">The Bhopal School of Social Sciences <span class="text-slate-500">• Bhopal, India</span></p>
+                    <p class="mt-4 text-sm text-slate-300 leading-relaxed">
+                        Focused on Object-Oriented Programming, Data Structures &amp; Algorithms, Database Management Systems, and Web Technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Projects Section -->
+    <section id="projects" class="relative z-10 py-16 border-t border-slate-800/70 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <div class="flex items-center gap-2.5 mb-2">
+                    <span class="h-px w-6 bg-brand-500"></span>
+                    <span class="text-xs font-mono font-semibold tracking-wider text-brand-400 uppercase">Portfolio</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Featured Projects</h2>
+            </div>
+            <p class="text-slate-400 text-sm mt-2 md:mt-0 font-mono">Selected Technical Work</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 sm:p-7 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded border border-brand-500/20">NLP / Machine Learning</span>
+                        <span class="text-xs text-slate-400 font-mono">04/2023 - 07/2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Job Summary NLP System</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                        A Human-Machine Interaction NLP engine built to parse, summarize, and visualize similarities across job market postings. Utilized Python text processing libraries with Flask API rendering for interactive analysis.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/60 font-mono text-xs">
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Python</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">SpaCy</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">NLTK</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Flask</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 sm:p-7 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-mono text-brand-400 bg-brand-500/10 px-2.5 py-1 rounded border border-brand-500/20">Android Development</span>
+                        <span class="text-xs text-slate-400 font-mono">04/2023 - 07/2023</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Photon Editor Mobile App</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                        A feature-rich photo editing application built with DS Photo Editor SDK. Leveraged 3 native hardware phone sensors: Camera, GPS geotagging, and Gyroscope motion interactions for intuitive real-time photo processing.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800/60 font-mono text-xs">
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Android Studio</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Java</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-800/70 text-slate-300 border border-slate-700/50">Hardware Sensors</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative z-10 py-16 border-t border-slate-800/70 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <div class="flex items-center gap-2.5 mb-2">
+                    <span class="h-px w-6 bg-brand-500"></span>
+                    <span class="text-xs font-mono font-semibold tracking-wider text-brand-400 uppercase">Capabilities</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Technical Skills &amp; Stack</h2>
+            </div>
+            <p class="text-slate-400 text-sm mt-2 md:mt-0 font-mono">Languages, Frameworks &amp; Tools</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Languages -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 rounded-xl">
+                <h3 class="text-sm font-mono font-semibold text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-code text-brand-400"></i> Languages
+                </h3>
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">C#</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">TypeScript</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">JavaScript</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Java</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Python</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">SQL</span>
+                </div>
+            </div>
+
+            <!-- Backend & Databases -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 rounded-xl">
+                <h3 class="text-sm font-mono font-semibold text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-server text-brand-400"></i> Backend &amp; Data
+                </h3>
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">.NET 10 / ASP.NET</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">EF Core</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Node.js</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Spring Boot</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">PostgreSQL</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Redis</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">OAuth 2.0</span>
+                </div>
+            </div>
+
+            <!-- Frontend & UI -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 rounded-xl">
+                <h3 class="text-sm font-mono font-semibold text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-brand-400"></i> Frontend &amp; UI
+                </h3>
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">React 19</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Next.js</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Angular</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">WPF / XAML</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Tailwind CSS</span>
+                </div>
+            </div>
+
+            <!-- AI & LLMs -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 rounded-xl">
+                <h3 class="text-sm font-mono font-semibold text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-brain text-brand-400"></i> AI &amp; LLMs
+                </h3>
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Local LLMs (Ollama)</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Llama 3.2</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">spaCy / NLTK</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Claude Code</span>
+                </div>
+            </div>
+
+            <!-- DevOps & Workflow -->
+            <div class="bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 transition-colors p-6 rounded-xl md:col-span-2 lg:col-span-2">
+                <h3 class="text-sm font-mono font-semibold text-slate-200 uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-cubes text-brand-400"></i> DevOps &amp; Engineering Workflows
+                </h3>
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Docker</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Git / GitHub Actions</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">GitLab CI/CD</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">REST Architecture</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Microservices</span>
+                    <span class="px-2.5 py-1.5 rounded bg-slate-800/80 text-slate-200 border border-slate-700/60">Agile / Jira</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="relative z-10 py-16 sm:py-20 border-t border-slate-800/80 bg-[#080c13]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono text-slate-300">
+                <i class="fa-regular fa-paper-plane text-brand-400"></i> Let's Connect
+            </div>
+            
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Interested in building together?
+            </h2>
+            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+                I'm open to discussing full-time software engineering roles, AI systems challenges, or technical collaborations.
+            </p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-3 pt-4">
+                <a href="mailto:pnirwan9@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 active:bg-brand-700 transition-colors shadow-sm shadow-brand-500/20 border border-brand-500">
+                    <i class="fa-regular fa-envelope"></i> Send an Email
+                </a>
+                <a href="https://www.linkedin.com/in/parag-nirwan/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/80 border border-slate-700/80 hover:border-slate-600 transition-colors">
+                    <i class="fa-brands fa-linkedin text-base text-[#0a66c2]"></i> Connect on LinkedIn
+                </a>
+            </div>
+
+            <div class="pt-12 mt-12 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 font-mono gap-4">
+                <p>&copy; Parag Nirwan. All rights reserved.</p>
+                <p class="flex items-center gap-2">
+                    <span>Landau, Rhineland-Pfalz, DE</span>
+                    <span class="text-slate-700">•</span>
+                    <span>Full Stack &amp; AI Engineer</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking any link inside it
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Copy Email to Clipboard with UI feedback
+        function copyEmailAddress() {
+            const email = 'pnirwan9@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const copyText = document.getElementById('copy-text');
+                const copyIcon = document.getElementById('copy-icon');
+                
+                const originalText = copyText.innerText;
+                copyText.innerText = 'Copied!';
+                copyIcon.className = 'fa-solid fa-check text-emerald-400';
+
+                setTimeout(() => {
+                    copyText.innerText = originalText;
+                    copyIcon.className = 'fa-regular fa-copy text-slate-400 group-hover:text-brand-400 transition-colors';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
