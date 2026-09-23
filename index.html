@@ -5,7 +5,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parag Nirwan | Full Stack Developer & AI Systems Engineer</title>
-    <meta name="description" content="Portfolio of Parag Nirwan - Full Stack Developer and AI Systems Engineer specializing in .NET, React, TypeScript, Python, FastAPI, and enterprise LLM integrations.">
+    <meta name="description" content="Profile of Parag Nirwan - Full Stack Developer and AI Systems Engineer specializing in .NET, React, TypeScript, Python, FastAPI, and enterprise LLM integrations.">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -72,23 +72,23 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             
             <!-- Brand Logo -->
-            <a href="javascript:void(0)" onclick="switchTab('portfolio')" class="group flex items-center gap-2.5">
+            <a href="javascript:void(0)" onclick="switchTab('Profile')" class="group flex items-center gap-2.5">
                 <span class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700/80 flex items-center justify-center text-xs font-mono font-bold text-brand-400 group-hover:border-brand-500/50 group-hover:text-brand-300 transition-colors">PN</span>
                 <span class="text-base font-bold tracking-tight text-white group-hover:text-slate-200 transition-colors">Parag Nirwan</span>
             </a>
 
-            <!-- Central View Tabs (Portfolio vs Resume) -->
+            <!-- Central View Tabs (Profile vs Resume) -->
             <div class="hidden sm:inline-flex p-1 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold">
-                <button id="nav-tab-portfolio" onclick="switchTab('portfolio')" class="tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 bg-brand-600 text-white shadow-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-briefcase text-xs"></i> Portfolio
+                <button id="nav-tab-Profile" onclick="switchTab('Profile')" class="tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 bg-brand-600 text-white shadow-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-briefcase text-xs"></i> Profile
                 </button>
                 <button id="nav-tab-resume" onclick="switchTab('resume')" class="tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 text-slate-400 hover:text-white flex items-center gap-1.5">
                     <i class="fa-regular fa-file-pdf text-brand-400"></i> Resume (PDF)
                 </button>
             </div>
             
-            <!-- Portfolio Section Links (visible when Portfolio tab is active) -->
-            <nav id="portfolio-subnav" class="hidden lg:flex items-center space-x-6 text-sm font-medium transition-opacity">
+            <!-- Profile Section Links (visible when Profile tab is active) -->
+            <nav id="Profile-subnav" class="hidden lg:flex items-center space-x-6 text-sm font-medium transition-opacity">
                 <a href="#about" class="text-slate-400 hover:text-white transition-colors">About</a>
                 <a href="#experience" class="text-slate-400 hover:text-white transition-colors">Experience</a>
                 <a href="#education" class="text-slate-400 hover:text-white transition-colors">Education</a>
@@ -98,10 +98,10 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <button onclick="openShareModal()" class="inline-flex items-center justify-center p-2 rounded-lg text-slate-400 hover:text-white bg-slate-800/90 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all shadow-sm" aria-label="Share Portfolio">
+                <button onclick="openShareModal()" class="inline-flex items-center justify-center p-2 rounded-lg text-slate-400 hover:text-white bg-slate-800/90 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all shadow-sm" aria-label="Share Profile">
                     <i class="fa-solid fa-share-nodes"></i>
                 </button>
-                <a href="#contact" onclick="if(currentTab==='resume') switchTab('portfolio');" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all shadow-sm">
+                <a href="#contact" onclick="if(currentTab==='resume') switchTab('Profile');" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold text-slate-200 hover:text-white bg-slate-800/90 hover:bg-slate-700/80 border border-slate-700 hover:border-slate-600 transition-all shadow-sm">
                     Get in Touch
                 </a>
                 <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle navigation menu">
@@ -114,8 +114,8 @@
         <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-800 bg-[#0d131f] px-6 pt-3 pb-6 space-y-3 font-medium text-sm">
             <!-- Mobile Tab Switcher -->
             <div class="flex p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold mb-3">
-                <button id="mobile-tab-portfolio" onclick="switchTab('portfolio')" class="flex-1 py-2 rounded-lg text-center bg-brand-600 text-white transition-colors flex items-center justify-center gap-1.5">
-                    <i class="fa-solid fa-briefcase"></i> Portfolio
+                <button id="mobile-tab-Profile" onclick="switchTab('Profile')" class="flex-1 py-2 rounded-lg text-center bg-brand-600 text-white transition-colors flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-briefcase"></i> Profile
                 </button>
                 <button id="mobile-tab-resume" onclick="switchTab('resume')" class="flex-1 py-2 rounded-lg text-center text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-1.5">
                     <i class="fa-regular fa-file-pdf text-brand-400"></i> Resume (PDF)
@@ -124,20 +124,20 @@
 
             <!-- Mobile Subnav links -->
             <div id="mobile-subnav-links" class="space-y-2">
-                <a href="#about" onclick="switchTab('portfolio')" class="block py-1.5 text-slate-300 hover:text-brand-400">About</a>
-                <a href="#experience" onclick="switchTab('portfolio')" class="block py-1.5 text-slate-300 hover:text-brand-400">Experience</a>
-                <a href="#education" onclick="switchTab('portfolio')" class="block py-1.5 text-slate-300 hover:text-brand-400">Education</a>
-                <a href="#projects" onclick="switchTab('portfolio')" class="block py-1.5 text-slate-300 hover:text-brand-400">Projects</a>
-                <a href="#skills" onclick="switchTab('portfolio')" class="block py-1.5 text-slate-300 hover:text-brand-400">Skills</a>
-                <a href="#contact" onclick="switchTab('portfolio')" class="block py-1.5 text-slate-300 hover:text-brand-400">Contact</a>
+                <a href="#about" onclick="switchTab('Profile')" class="block py-1.5 text-slate-300 hover:text-brand-400">About</a>
+                <a href="#experience" onclick="switchTab('Profile')" class="block py-1.5 text-slate-300 hover:text-brand-400">Experience</a>
+                <a href="#education" onclick="switchTab('Profile')" class="block py-1.5 text-slate-300 hover:text-brand-400">Education</a>
+                <a href="#projects" onclick="switchTab('Profile')" class="block py-1.5 text-slate-300 hover:text-brand-400">Projects</a>
+                <a href="#skills" onclick="switchTab('Profile')" class="block py-1.5 text-slate-300 hover:text-brand-400">Skills</a>
+                <a href="#contact" onclick="switchTab('Profile')" class="block py-1.5 text-slate-300 hover:text-brand-400">Contact</a>
             </div>
         </div>
     </header>
 
     <!-- ================================================================= -->
-    <!-- TAB 1: PORTFOLIO VIEW (Default) -->
+    <!-- TAB 1: Profile VIEW (Default) -->
     <!-- ================================================================= -->
-    <div id="portfolio-view">
+    <div id="Profile-view">
 
         <!-- Hero Section -->
         <section id="about" class="relative z-10 pt-12 pb-16 md:pt-20 md:pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -467,7 +467,7 @@
                 <div>
                     <div class="flex items-center gap-2.5 mb-2">
                         <span class="h-px w-6 bg-brand-500"></span>
-                        <span class="text-xs font-mono font-semibold tracking-wider text-brand-400 uppercase">Portfolio</span>
+                        <span class="text-xs font-mono font-semibold tracking-wider text-brand-400 uppercase">Profile</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Featured Projects</h2>
                 </div>
@@ -670,8 +670,8 @@
         
         <!-- Breadcrumb / Return Action -->
         <div class="mb-6 flex items-center justify-between">
-            <button onclick="switchTab('portfolio')" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors group cursor-pointer">
-                <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> Back to Portfolio
+            <button onclick="switchTab('Profile')" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors group cursor-pointer">
+                <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i> Back to Profile
             </button>
             <span class="text-xs font-mono text-slate-400">PDF Document Viewer</span>
         </div>
@@ -787,10 +787,10 @@
                 <i class="fa-solid fa-xmark text-xl"></i>            
             </button>                      
             <div class="text-center">               
-                <h3 class="text-xl font-bold text-white mb-2">Share Portfolio</h3>                
+                <h3 class="text-xl font-bold text-white mb-2">Share Profile</h3>                
                 <p class="text-sm text-slate-400 mb-6">Scan the QR code to visit this page on your mobile device</p>                          
                 <div class="bg-white p-3 rounded-xl inline-block mb-6">                    
-                    <img id="qr-code" src="paragnirwanqr.png" alt="Portfolio QR Code" class="w-48 h-48">                
+                    <img id="qr-code" src="paragnirwanqr.png" alt="Profile QR Code" class="w-48 h-48">                
                 </div>
                 <div class="flex flex-col gap-3">
                     <button onclick="copyUrl()" id="copy-btn" class="w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 transition-colors flex items-center justify-center gap-2">
@@ -803,23 +803,23 @@
 
     <!-- Interactive Scripts -->
     <script>
-        let currentTab = 'portfolio';
+        let currentTab = 'Profile';
 
-        // Tab Switching Logic (Portfolio vs Resume)
+        // Tab Switching Logic (Profile vs Resume)
         function switchTab(tab) {
             currentTab = tab;
-            const portfolioView = document.getElementById('portfolio-view');
+            const ProfileView = document.getElementById('Profile-view');
             const resumeView = document.getElementById('resume-view');
-            const subnav = document.getElementById('portfolio-subnav');
+            const subnav = document.getElementById('Profile-subnav');
             const mobileSubnav = document.getElementById('mobile-subnav-links');
 
-            const navTabPortfolio = document.getElementById('nav-tab-portfolio');
+            const navTabProfile = document.getElementById('nav-tab-Profile');
             const navTabResume = document.getElementById('nav-tab-resume');
-            const mobileTabPortfolio = document.getElementById('mobile-tab-portfolio');
+            const mobileTabProfile = document.getElementById('mobile-tab-Profile');
             const mobileTabResume = document.getElementById('mobile-tab-resume');
 
             if (tab === 'resume') {
-                portfolioView.classList.add('hidden');
+                ProfileView.classList.add('hidden');
                 resumeView.classList.remove('hidden');
 
                 // Subnav visibility
@@ -827,16 +827,16 @@
                 if (mobileSubnav) mobileSubnav.classList.add('hidden');
 
                 // Desktop tab styling
-                if (navTabPortfolio) {
-                    navTabPortfolio.className = 'tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 text-slate-400 hover:text-white flex items-center gap-1.5';
+                if (navTabProfile) {
+                    navTabProfile.className = 'tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 text-slate-400 hover:text-white flex items-center gap-1.5';
                 }
                 if (navTabResume) {
                     navTabResume.className = 'tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 bg-brand-600 text-white shadow-sm flex items-center gap-1.5';
                 }
 
                 // Mobile tab styling
-                if (mobileTabPortfolio) {
-                    mobileTabPortfolio.className = 'flex-1 py-2 rounded-lg text-center text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-1.5';
+                if (mobileTabProfile) {
+                    mobileTabProfile.className = 'flex-1 py-2 rounded-lg text-center text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-1.5';
                 }
                 if (mobileTabResume) {
                     mobileTabResume.className = 'flex-1 py-2 rounded-lg text-center bg-brand-600 text-white transition-colors flex items-center justify-center gap-1.5';
@@ -850,23 +850,23 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 resumeView.classList.add('hidden');
-                portfolioView.classList.remove('hidden');
+                ProfileView.classList.remove('hidden');
 
                 // Subnav visibility
                 if (subnav) subnav.classList.remove('opacity-0', 'pointer-events-none');
                 if (mobileSubnav) mobileSubnav.classList.remove('hidden');
 
                 // Desktop tab styling
-                if (navTabPortfolio) {
-                    navTabPortfolio.className = 'tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 bg-brand-600 text-white shadow-sm flex items-center gap-1.5';
+                if (navTabProfile) {
+                    navTabProfile.className = 'tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 bg-brand-600 text-white shadow-sm flex items-center gap-1.5';
                 }
                 if (navTabResume) {
                     navTabResume.className = 'tab-btn px-4 py-1.5 rounded-lg transition-all duration-200 text-slate-400 hover:text-white flex items-center gap-1.5';
                 }
 
                 // Mobile tab styling
-                if (mobileTabPortfolio) {
-                    mobileTabPortfolio.className = 'flex-1 py-2 rounded-lg text-center bg-brand-600 text-white transition-colors flex items-center justify-center gap-1.5';
+                if (mobileTabProfile) {
+                    mobileTabProfile.className = 'flex-1 py-2 rounded-lg text-center bg-brand-600 text-white transition-colors flex items-center justify-center gap-1.5';
                 }
                 if (mobileTabResume) {
                     mobileTabResume.className = 'flex-1 py-2 rounded-lg text-center text-slate-400 hover:text-white transition-colors flex items-center justify-center gap-1.5';
@@ -894,7 +894,7 @@
             if (window.location.hash === '#resume') {
                 switchTab('resume');
             } else {
-                switchTab('portfolio');
+                switchTab('Profile');
             }
         });
 
